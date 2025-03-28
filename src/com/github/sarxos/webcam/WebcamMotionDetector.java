@@ -271,7 +271,7 @@ public class WebcamMotionDetector {
 	/**
 	 * Will notify all attached motion listeners.
 	 * 
-	 * @param image with the motion detected
+	 * @param currentOriginal image with the motion detected
 	 */
 	private void notifyMotionListeners(BufferedImage currentOriginal) {
 		WebcamMotionEvent wme = new WebcamMotionEvent(this, previousOriginal, currentOriginal, algorithm.getArea(), algorithm.getCog(), algorithm.getPoints());
