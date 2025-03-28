@@ -329,7 +329,13 @@ public class WebcamDefaultDevice implements WebcamDevice, BufferAccess, Runnable
 			d.getIdentifierStr();
 		}
 
-		boolean started = grabber.startSession(size.width, size.height, 50, Pointer.pointerTo(device));
+		boolean started = grabber.startSession(
+				size.width,
+				size.height,
+				50,
+				Pointer.getPointer(device)  // Reemplazo directo de pointerTo()
+		);
+
 		if (!started) {
 			throw new WebcamException("Cannot start native grabber!");
 		}
