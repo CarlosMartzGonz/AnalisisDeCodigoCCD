@@ -172,7 +172,7 @@ public class WebcamMotionDetector {
 	 * Create motion detector. Will open webcam if it is closed.
 	 * 
 	 * @param webcam web camera instance
-	 * @param motion detector algorithm implementation
+	 * @param algorithm detector algorithm implementation
 	 * @param interval the check interval (in milliseconds)
 	 */
 	public WebcamMotionDetector(Webcam webcam, WebcamMotionDetectorAlgorithm algorithm, int interval) {
