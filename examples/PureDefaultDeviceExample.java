@@ -25,7 +25,7 @@ public class PureDefaultDeviceExample {
 			break;
 		}
 
-		boolean started = grabber.startSession(320, 240, 30, Pointer.pointerTo(device));
+		boolean started = grabber.startSession(320, 240, 30, Pointer.getPointer(device));
 		if (!started) {
 			throw new RuntimeException("Not able to start native grabber!");
 		}
