@@ -72,7 +72,7 @@ public class WebcamDriverUtils {
 	 * Scans all classes accessible from the context class loader which belong
 	 * to the given package and subpackages.
 	 * 
-	 * @param packageName The base package
+	 * @param /com/github/sarxos/webcam/WebcamDriverUtils.javam The base package
 	 * @param flat scan only one package level, do not dive into subdirectories
 	 * @return The classes
 	 * @throws ClassNotFoundException
