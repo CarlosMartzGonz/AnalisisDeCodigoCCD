@@ -111,7 +111,6 @@ public class TakeSnapshotFromVideoExample extends JFrame {
 			webcam.setViewSize(size);
 			WebcamPanel panel = new WebcamPanel(webcam, size, false);
 			panel.setFPSDisplayed(true);
-			panel.setFillArea(true);
 			panels.add(panel);
 		}
 
