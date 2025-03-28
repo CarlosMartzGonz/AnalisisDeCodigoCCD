@@ -24,7 +24,7 @@ public class ImageTransformerExample implements WebcamImageTransformer {
 
 		WebcamPanel panel = new WebcamPanel(webcam);
 		panel.setFPSDisplayed(true);
-		panel.setFillArea(true);
+
 
 		window.add(panel);
 		window.pack();
