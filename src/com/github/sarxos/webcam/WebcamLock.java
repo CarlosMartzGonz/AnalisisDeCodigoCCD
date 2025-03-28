@@ -7,6 +7,8 @@ import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileOutputStream;
 import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Paths;
 import java.util.concurrent.atomic.AtomicBoolean;
 
 import org.slf4j.Logger;
@@ -117,24 +119,20 @@ public class WebcamLock {
 
 		File tmp = null;
 		DataOutputStream dos = null;
-
 		try {
-
 			tmp = File.createTempFile(String.format("%s-tmp", name), "");
 			tmp.deleteOnExit();
-
-			dos = new DataOutputStream(new FileOutputStream(tmp));
+			dos = new DataOutputStream(Files.newOutputStream(tmp.toPath()));
 			dos.writeLong(value);
 			dos.flush();
-
 		} catch (IOException e) {
-			throw new RuntimeException(e);
+			throw new RuntimeException("Error al escribir el archivo temporal", e);
 		} finally {
 			if (dos != null) {
 				try {
 					dos.close();
 				} catch (IOException e) {
-					throw new RuntimeException(e);
+					throw new RuntimeException("Error al cerrar el DataOutputStream", e);
 				}
 			}
 		}
